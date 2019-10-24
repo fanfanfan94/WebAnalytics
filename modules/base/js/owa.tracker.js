@@ -259,6 +259,16 @@ OWA.tracker = function( options ) {
 	// check to se if an overlay session is active
 	this.checkForOverlaySession();
 	
+	// create page object.
+	this.page = new OWA.event();
+	
+	// merge page properties from global owa_params object
+	if (typeof owa_params != 'undefined') {
+		// merge page params from the global object if it exists
+		if (owa_params.length > 0) {
+			this.page.merge(owa_params);
+		}
+	}
 }
 
 OWA.tracker.prototype = {
@@ -632,7 +642,7 @@ OWA.tracker.prototype = {
 	 */
 	setPageTitle: function(title) {
 		
-		this.setGlobalEventProperty("page_title", OWA.util.trim( title ) );
+		this.setGlobalEventProperty("page_title", title);
 	},
 	
 	/**
@@ -640,7 +650,7 @@ OWA.tracker.prototype = {
 	 */
 	setPageType : function(type) {
 		
-		this.setGlobalEventProperty("page_type", OWA.util.trim( type ) );
+		this.setGlobalEventProperty("page_type", type);
 	},
 	
 	/**
@@ -648,7 +658,7 @@ OWA.tracker.prototype = {
 	 */
 	setUserName : function( value ) {
 		
-		this.setGlobalEventProperty( 'user_name', OWA.util.trim( value ) );
+		this.setGlobalEventProperty( 'user_name', value );
 	},
 	
 	/**
@@ -746,10 +756,8 @@ OWA.tracker.prototype = {
 	 * Deprecated
 	 */
 	log : function() {
-	
-		var event = new OWA.event
-    	event.setEventType("base.page_request");
-    	return this.logEvent(event);
+    	this.page.setEventType("base.page_request");
+    	return this.logEvent(this.page);
     },
     
     isObjectType : function(obj, type) {
@@ -762,6 +770,9 @@ OWA.tracker.prototype = {
     logEvent : function (properties, block, callback) {
     	
     	if (this.active) {
+    	
+    		// append site_id to properties
+    		properties.site_id = this.getSiteId();
     	
 	    	var url = this._assembleRequestUrl(properties);
 	    	var limit = this.getOption('getRequestCharacterLimit');
@@ -930,9 +941,8 @@ OWA.tracker.prototype = {
         	var doc = that.getIframeDocument( iframe );
             
             if ( doc ) {
-		    clearInterval(timer); //clear the interval before submitting data, race condition could occur otherwise resulting in duplicate tracked events
             	that.postFromIframe(iframe, data);
-				
+				clearInterval(timer);
             }
 			
 			            
@@ -1490,6 +1500,10 @@ OWA.tracker.prototype = {
 			campaign_params['at'] = '(not set)';
 		}
 		
+		if (this.isNewCampaign) {
+			//campaign_params['ts'] = this.page.get('timestamp');
+		}
+		
 		return campaign_params;
 	},
 	
@@ -2017,6 +2031,16 @@ OWA.tracker.prototype = {
 		}
 	},
 	
+	setPageProperties : function ( properties ) {
+		
+		for (var prop in properties) {
+			
+			if ( properties.hasOwnProperty( prop ) ) {
+				this.page.set( prop, properties[prop] );
+			}
+		}
+	},
+	
 	/**
 	 * Set a custom variable
 	 *
@@ -2095,30 +2119,20 @@ OWA.tracker.prototype = {
      */
     addDefaultsToEvent : function ( event, callback ) {
     	
-    	event.set( 'site_id', this.getSiteId() );
     	
-    	if ( ! event.get( 'page_url') && ! this.getGlobalEventProperty('page_url') ) {
-    		
+    	if ( ! event.get( 'page_url') ) {
     		event.set('page_url', this.getCurrentUrl() );
     	}
     	
-    	if ( ! event.get( 'HTTP_REFERER') && ! this.getGlobalEventProperty('HTTP_REFERER')) {
-    		
+    	if ( ! event.get( 'HTTP_REFERER') ) {
     		event.set('HTTP_REFERER', document.referrer );
     	}
     	
-    	if ( ! event.get( 'page_title') && ! this.getGlobalEventProperty('page_title') ) {
-    		 
+    	if ( ! event.get( 'page_title') ) {
     		event.set('page_title', OWA.util.trim( document.title ) );
-    	}
-    	
-    	if ( ! event.get( 'timestamp') ) {
-    		 
-    		event.set('timestamp', this.getTimestamp() );
     	}
    		
    		if (callback && ( typeof( callback ) == 'function' ) ) {
-   			
    			callback( event );
    		}
     	
@@ -2245,17 +2259,19 @@ OWA.tracker.prototype = {
     /**
 	 * Logs a page view event
 	 */
-	trackPageView : function( url ) {
+	trackPageView : function(url) {
 		
-		var event = new OWA.event;
 		
 		if (url) {
-			event.set('page_url', url);
+			this.page.set('page_url', url);
 		}
+		// set default event properties
+    	//this.setGlobalEventProperty( 'HTTP_REFERER', document.referrer );
+    	//this.setPageTitle(document.title);
+		this.page.set('timestamp', this.startTime);
+		this.page.setEventType("base.page_request");
 		
-		event.setEventType( "base.page_request" );
-		
-		return this.trackEvent( event );
+		return this.trackEvent(this.page);
 	},
 	
 	trackAction : function(action_group, action_name, action_label, numeric_value) {
@@ -2263,6 +2279,8 @@ OWA.tracker.prototype = {
 		var event = new OWA.event;
 		
 		event.setEventType('track.action');
+		event.set('site_id', this.getSiteId());
+		event.set('page_url', this.getCurrentUrl() );
 		event.set('action_group', action_group);
 		event.set('action_name', action_name);
 		event.set('action_label', action_label);
@@ -2291,6 +2309,10 @@ OWA.tracker.prototype = {
 			}
 			domstream.setEventType( 'dom.stream' );
 			domstream.set( 'domstream_guid', this.domstream_guid );
+			domstream.set( 'site_id', this.getSiteId());
+			domstream.set( 'page_url', this.getCurrentUrl() );
+			//domstream.set( 'timestamp', this.startTime);
+			domstream.set( 'timestamp', OWA.util.getCurrentUnixTimestamp() );
 			domstream.set( 'duration', this.getElapsedTime());
 			domstream.set( 'stream_events', JSON.stringify(this.event_queue));
 			domstream.set( 'stream_length', this.event_queue.length );

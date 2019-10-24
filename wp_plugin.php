@@ -213,7 +213,7 @@ function &owa_getInstance() {
 		
 		// create owa instance w/ config
 		$owa = new owa_wp();
-		$owa->setSiteId( md5( get_option( 'siteurl' ) ) );
+		$owa->setSiteId( md5( get_settings( 'siteurl' ) ) );
 		$owa->setSetting( 'base', 'report_wrapper', 'wrapper_wordpress.tpl' );
 		$owa->setSetting( 'base', 'link_template', '%s&%s' );
 		$owa->setSetting( 'base', 'main_url', '../wp-admin/index.php?page=owa' );
@@ -308,7 +308,9 @@ function owa_wpAuthUser($auth_status) {
 function owa_getCurrentWpUser() {
 
 	// Access WP current user object to check permissions
-    return wp_get_current_user();
+	global $current_user;
+    get_currentuserinfo();
+    return $current_user;
 
 }
 
@@ -561,9 +563,9 @@ function owa_install() {
 	$owa->setSetting('base', 'cache_objects', false);	
 	$public_url =  get_bloginfo('wpurl').'/wp-content/plugins/owa/';
 	
-	$install_params = array('site_id' => md5(get_option('siteurl')), 
+	$install_params = array('site_id' => md5(get_settings('siteurl')), 
 							'name' => get_bloginfo('name'),
-							'domain' => get_option('siteurl'), 
+							'domain' => get_settings('siteurl'), 
 							'description' => get_bloginfo('description'),
 							'action' => 'base.installEmbedded',
 							'db_type' => 'mysql',
