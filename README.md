@@ -1,4 +1,2 @@
-# Open-Web-Analytics
-Official Git Repository for the Open Web Analytics Project.
+ Open-Web-Analytics
 
-See the wiki on Github for documentation. 
