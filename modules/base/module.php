@@ -803,7 +803,7 @@ class owa_baseModule extends owa_module {
 				'base.visitorsFromRequestFact'
 			),
 			'',
-			'Visitors',
+			'访客',
 			'The total number of visitors',
 			'Site Usage'
 		);
@@ -839,7 +839,7 @@ class owa_baseModule extends owa_module {
 			'visitDuration', 
 			'base.visitDuration',
 			'',
-			'Visit Duration',
+			'浏览时间',
 			'The average duration of visits.',
 			'Site Usage'
 		);
@@ -857,7 +857,7 @@ class owa_baseModule extends owa_module {
 			'bounceRate', 
 			'base.bounceRate',
 			'',
-			'Bounce Rate',
+			'跳出率',
 			'The percentage of visits that were bounces.',
 			'Site Usage'
 		);
@@ -866,7 +866,7 @@ class owa_baseModule extends owa_module {
 			'pagesPerVisit', 
 			'base.pagesPerVisit',
 			'',
-			'Pages Per Visit',
+			'每次浏览网页数',
 			'The average pages viewed per visit.',
 			'Site Usage'
 		);

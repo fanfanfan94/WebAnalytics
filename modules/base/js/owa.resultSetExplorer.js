@@ -1100,7 +1100,7 @@ OWA.dataGrid.prototype = {
 					
 		} else {
 			var dom_id = this.dom_id;
-			jQuery("#" + dom_id).html("No data is available for this time period.");
+			jQuery("#" + dom_id).html("当前时间段没有数据");
 		}
 	},
 	
