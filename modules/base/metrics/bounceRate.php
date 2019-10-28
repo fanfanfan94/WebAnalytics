@@ -37,7 +37,7 @@ class owa_bounceRate extends owa_calculatedMetric {
 	function __construct() {
 	
 		$this->setName('bounceRate');
-		$this->setLabel('Bounce Rate');
+		$this->setLabel('跳出率');
 		$this->setChildMetric('bounces');
 		$this->setChildMetric('visits');
 		$this->setFormula('bounces / visits');

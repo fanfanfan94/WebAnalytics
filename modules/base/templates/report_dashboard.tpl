@@ -1,5 +1,5 @@
 <div class="owa_reportSectionContent" style="width:auto;">
-<div class="owa_reportSectionHeader">Site Metrics</div>
+<div class="owa_reportSectionHeader">网站数据</div>
 
 	<div id="trend-chart" style="height:125px;"></div><BR>
 	<div id="trend-metrics" style="width:auto;"></div>
