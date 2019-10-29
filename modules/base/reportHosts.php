@@ -35,7 +35,7 @@ class owa_reportHostsController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Host Names');
+		$this->setTitle('服务器域名');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'hostName');
 		$this->set('sort', 'visits-');

@@ -116,7 +116,7 @@ class owa_reportGoalFunnelController extends owa_reportController {
 		}			
 		// set view stuff
 		$this->setSubview('base.reportGoalFunnel');
-		$this->setTitle('Funnel Visualization:', 'Goal ' . $goal_number);
+		$this->setTitle('渠道可视化:', '目标 ' . $goal_number);
 		$this->set('goal_number', $goal_number);
 	}
 }

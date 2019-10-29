@@ -35,7 +35,7 @@ class owa_reportPageTypesController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportSimpleDimensional');
-		$this->setTitle('Page Types');
+		$this->setTitle('网页类型');
 		$this->set('metrics', 'visits,pageViews');
 		$this->set('dimensions', 'pageType');
 		$this->set('sort', 'pageViews-');

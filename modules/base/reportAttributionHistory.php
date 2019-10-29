@@ -35,7 +35,7 @@ class owa_reportAttributionHistoryController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Attribution History');
+		$this->setTitle('归因历史');
 		
 		$this->set('dimensions', 'latestAttributions');
 		$this->set('sort', 'visits-');

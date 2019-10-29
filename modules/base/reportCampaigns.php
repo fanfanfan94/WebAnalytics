@@ -35,7 +35,7 @@ class owa_reportCampaignsController extends owa_reportController {
 	function action() {
 		
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Campaigns');
+		$this->setTitle('广告活动');
 		$metrics = 'visits,pageViews,bounces';
 		if ( owa_coreAPI::getSetting('base', 'enableEcommerceReporting') ) {
 			$metrics .= ',transactions,transactionRevenue';

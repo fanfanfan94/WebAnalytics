@@ -33,7 +33,7 @@ class owa_newVisitors extends owa_metric {
 	function __construct() {
 	
 		$this->setName('newVisitors');
-		$this->setLabel('New Visitors');
+		$this->setLabel('新访客');
 		$this->setEntity('base.session');
 		$this->setColumn('is_new_visitor');
 		$this->setSelect(sprintf("sum(CASE %s WHEN TRUE THEN 1 ELSE 0 END)", $this->getColumn()));

@@ -44,7 +44,7 @@ class owa_reportFeedsController extends owa_reportController {
 		// view stuff
 		$this->setView('base.report');
 		$this->setSubview('base.reportFeeds');
-		$this->setTitle('Feeds');	
+		$this->setTitle('内容');	
 	}
 }
 

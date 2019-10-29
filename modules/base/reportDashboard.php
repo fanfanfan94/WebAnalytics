@@ -63,7 +63,7 @@ class owa_reportDashboardController extends owa_reportController {
 	
 		// set view stuff
 		$this->setSubview('base.reportDashboard');
-		$this->setTitle('Dashboard');
+		$this->setTitle('状态板');
 		
 		$metrics = 'visits,uniqueVisitors,pageViews,bounceRate,pagesPerVisit,visitDuration';
 		

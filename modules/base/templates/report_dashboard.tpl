@@ -15,7 +15,7 @@
 				
 				<div id="top-pages" style="min-width:350px"></div>
 				<div class="owa_moreLinks">
-					<a href="<?php echo $this->makeLink(array('do' => 'base.reportPages'), true);?>">View Full Report &raquo;</a>
+					<a href="<?php echo $this->makeLink(array('do' => 'base.reportPages'), true);?>">查看完整报告 &raquo;</a>
 				</div>
 			</div>
 			

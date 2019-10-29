@@ -35,7 +35,7 @@ class owa_reportVisitorsRecencyController extends owa_reportController {
 	function action() {
 							
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Visitor Recency');
+		$this->setTitle('最近访客');
 		$this->set('metrics', 'visits');
 		$this->set('dimensions', 'daysSinceLastVisit');
 		$this->set('sort', 'daysSinceLastVisit');

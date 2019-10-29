@@ -35,7 +35,7 @@ class owa_reportVisitorsLoyaltyController extends owa_reportController {
 	function action() {
 						
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Visitor Loyalty');
+		$this->setTitle('访客忠诚度');
 		$this->set('metrics', 'visits');
 		$this->set('dimensions', 'priorVisitCount');
 		$this->set('sort', 'priorVisitCount');

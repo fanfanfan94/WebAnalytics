@@ -36,7 +36,7 @@ class owa_reportKeywordsController extends owa_reportController {
 		
 		$this->setView('base.report');
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Referring Search Terms');
+		$this->setTitle('相关搜索名词');
 		//$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'referralSearchTerms');
 		$this->set('sort', 'visits-');

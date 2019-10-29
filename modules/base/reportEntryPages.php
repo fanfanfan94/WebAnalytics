@@ -35,7 +35,7 @@ class owa_reportEntryPagesController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Entry Pages');
+		$this->setTitle('入口页面');
 		//$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'entryPagePath,entryPageUrl,entryPageTitle');
 		$this->set('sort', 'visits-');

@@ -812,7 +812,7 @@ class owa_baseModule extends owa_module {
 			'newVisitors', 
 			'base.newVisitors',
 			'',
-			'New Visitors',
+			'新访客',
 			'The total number of new visitors',
 			'Site Usage'
 		);
@@ -821,7 +821,7 @@ class owa_baseModule extends owa_module {
 			'repeatVisitors', 
 			'base.repeatVisitors',
 			'',
-			'Repeat Visitors',
+			'重复访客',
 			'The total number of repeat visitors',
 			'Site Usage'
 		);
@@ -2263,7 +2263,7 @@ class owa_baseModule extends owa_module {
 	
 	function registerNavigation() {
 		
-		$this->addNavigationSubGroup('Dashboard', 'base.reportDashboard', '目录', 1);		
+		$this->addNavigationSubGroup('Dashboard', 'base.reportDashboard', '状态板', 1);		
 		
 		//Ecommerce
 		$this->addNavigationSubGroup('Ecommerce', 'base.reportEcommerce', 'Ecommerce', 5, 'view_reports_ecommerce');
@@ -2301,7 +2301,7 @@ class owa_baseModule extends owa_module {
 		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAnchortext', '入站文本链接', 2);
 		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportSearchEngines', '搜索引擎', 3);
 		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportReferringSites', '相关网站', 4);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCampaigns', 'Campaigns', 5);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCampaigns', '广告活动', 5);
 		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAds', '广告效果', 6);
 		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAdTypes', '广告类型', 7);
 		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCreativePerformance', '创作效果', 8);
