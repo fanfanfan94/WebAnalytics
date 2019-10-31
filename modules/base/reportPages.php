@@ -35,7 +35,7 @@ class owa_reportPagesController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportSimpleDimensional');
-		$this->setTitle('Web Pages');
+		$this->setTitle('网页');
 		$this->set('metrics', 'pageViews,visits,uniquePageViews');
 		// add ametrics override setting
 		$this->set('dimensions', 'pagePath,pageTitle,pageType,pageUrl');

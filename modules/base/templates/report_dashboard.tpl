@@ -1,5 +1,5 @@
 <div class="owa_reportSectionContent" style="width:auto;">
-<div class="owa_reportSectionHeader">Site Metrics</div>
+<div class="owa_reportSectionHeader">网站数据</div>
 
 	<div id="trend-chart" style="height:125px;"></div><BR>
 	<div id="trend-metrics" style="width:auto;"></div>
@@ -11,21 +11,21 @@
 		<TD style="width:50%" valign="top">
 			
 			<div class="owa_reportSectionContent">
-				<div class="owa_reportSectionHeader">Top Content</div>
+				<div class="owa_reportSectionHeader">热门内容</div>
 				
 				<div id="top-pages" style="min-width:350px"></div>
 				<div class="owa_moreLinks">
-					<a href="<?php echo $this->makeLink(array('do' => 'base.reportPages'), true);?>">View Full Report &raquo;</a>
+					<a href="<?php echo $this->makeLink(array('do' => 'base.reportPages'), true);?>">查看完整报告 &raquo;</a>
 				</div>
 			</div>
 			
 			<div class="owa_reportSectionContent">
-				<div class="owa_reportSectionHeader">Visitor Types</div>	
+				<div class="owa_reportSectionHeader">访客类型</div>	
 				<div id="visitor-types" style="width:250px;margin-top:-10px;"></div>
 			</div>
 			
 			<div class="owa_reportSectionContent">
-				<div class="section_header">Latest Visits</div>
+				<div class="section_header">最近访问</div>
 				<?php include('report_latest_visits.tpl')?>
 			</div>
 			
@@ -56,7 +56,7 @@
 				<div class="owa_genericHorizontalList owa_moreLinks">
 					<UL>
 						<LI>
-							<a href="<?php echo $this->makeLink(array('do' => 'base.reportActionTracking'), true);?>">View Full Report &raquo;</a>
+							<a href="<?php echo $this->makeLink(array('do' => 'base.reportActionTracking'), true);?>">V查看完整报告 &raquo;</a>
 						</LI>
 					</UL>
 				</div>
@@ -65,24 +65,24 @@
 			<?php endif;?>
 			
 			<div class="owa_reportSectionContent">
-				<div class="owa_reportSectionHeader">Traffic Sources</div>
+				<div class="owa_reportSectionHeader">流量来源</div>
 				<div id="visitor-mediums" style="width:250px;margin-top:-10px;"></div>	
 			</div>
 			
 			<div class="owa_reportSectionContent">
-				<div class="owa_reportSectionHeader">Top Referrers</div>
+				<div class="owa_reportSectionHeader">最高引用者</div>
 				
 				<div id="top-referers" style="min-width:350px"></div>
 				<div class="owa_moreLinks">
-					<a href="<?php echo $this->makeLink(array('do' => 'base.reportReferringSites'), true);?>">View Full Report &raquo;</a>
+					<a href="<?php echo $this->makeLink(array('do' => 'base.reportReferringSites'), true);?>">查看完整报告 &raquo;</a>
 				</div>
 				<div id="test"></div>
 			</div>
 		
-			<div class="owa_reportSectionContent">
+			<<!-- div class="owa_reportSectionContent">
 				<div class="section_header">OWA News</div>
 				<?php echo $this->getWidget('base.widgetOwaNews','',false);?>
-			</div>
+			</div> -->
 		</TD>
 	</TR>
 </table>

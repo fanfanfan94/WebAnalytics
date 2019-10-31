@@ -35,7 +35,7 @@ class owa_reportSearchEnginesController extends owa_reportController {
 	function action() {
 				
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Search Engines');
+		$this->setTitle('搜索引擎');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'referralWebSite');
 		$this->set('sort', 'visits-');

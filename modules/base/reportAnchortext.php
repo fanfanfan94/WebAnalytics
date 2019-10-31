@@ -36,7 +36,7 @@ class owa_reportAnchortextController extends owa_reportController {
 		
 		$this->setView('base.report');
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Referral Link Text');
+		$this->setTitle('相关链接文本');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'referralLinkText');
 		$this->set('sort', 'visits-');

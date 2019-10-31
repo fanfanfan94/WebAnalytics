@@ -1,8 +1,8 @@
 
-<P>Below is the list of web sites that are being tracked.</P>
+<P>下面是被追踪的网站列表</P>
 
 
-<p class="inline_h2"><a href="<?php echo $this->makeLink(array('do' => 'base.sitesProfile'));?>">Add New</a></p>
+<p class="inline_h2"><a href="<?php echo $this->makeLink(array('do' => 'base.sitesProfile'));?>">添加</a></p>
 
 <?php if ($tracked_sites): ?>
 	<?php foreach ($tracked_sites as $site):?>
@@ -25,12 +25,12 @@
 					<?php endif;?>
 					<span class="externalUrl"><?php $this->out( $site->get('domain') );?></span><BR><BR>
 					<div>
-					<a href="<?php echo $this->makeLink( array('do' => 'base.reportDashboard', 'siteId' => $site->get('site_id') ), true );?>">View Reports</a> |
-					<a href="<?php echo $this->makeLink( array('do' => 'base.sitesProfile', 'siteId' => $site->get('site_id'), 'edit' => true ) );?>">Edit Profile</a> |
-					<a href="<?php echo $this->makeLink( array('do' => 'base.sitesInvocation', 'siteId' => $site->get('site_id') ) );?>">Get Tracking Code</a> | 
-					<a href="<?php echo $this->makeLink( array('do' => 'base.optionsGoals', 'siteId' => $site->get('site_id') ) );?>">Goals</a>
+					<a href="<?php echo $this->makeLink( array('do' => 'base.reportDashboard', 'siteId' => $site->get('site_id') ), true );?>">查看报告</a> |
+					<a href="<?php echo $this->makeLink( array('do' => 'base.sitesProfile', 'siteId' => $site->get('site_id'), 'edit' => true ) );?>">修改信息</a> |
+					<a href="<?php echo $this->makeLink( array('do' => 'base.sitesInvocation', 'siteId' => $site->get('site_id') ) );?>">获取追踪代码</a> | 
+					<a href="<?php echo $this->makeLink( array('do' => 'base.optionsGoals', 'siteId' => $site->get('site_id') ) );?>">目标</a>
 					|
-					<a href="<?php echo $this->makeLink( array('do' => 'base.sitesDelete', 'siteId' => $site->get('site_id') ), false, false, false, true );?>">Delete</a>
+					<a href="<?php echo $this->makeLink( array('do' => 'base.sitesDelete', 'siteId' => $site->get('site_id') ), false, false, false, true );?>">删除</a>
 					</div>
 				</td>
 				<td>

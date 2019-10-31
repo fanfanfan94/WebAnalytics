@@ -35,7 +35,7 @@ class owa_reportReferringSitesController extends owa_reportController {
 	function action() {
 		
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Referrals');
+		$this->setTitle('相关网站');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'referralPageTitle,referralPageUrl');
 		$this->set('excludeColumns', "'referralPageUrl'");

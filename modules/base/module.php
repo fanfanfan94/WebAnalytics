@@ -729,7 +729,7 @@ class owa_baseModule extends owa_module {
 		// page views
 		$this->registerMetricDefinition(array(
 			'name'			=> 'pageViews',
-			'label'			=> 'Page Views',
+			'label'			=> '网页浏览数',
 			'description'	=> 'The total number of pages viewed.',
 			'group'			=> 'Site Usage',
 			'entity'		=> 'base.request',
@@ -741,7 +741,7 @@ class owa_baseModule extends owa_module {
 		
 		$this->registerMetricDefinition(array(
 			'name'			=> 'pageViews',
-			'label'			=> 'Page Views',
+			'label'			=> '网页浏览数',
 			'description'	=> 'The total number of pages viewed.',
 			'group'			=> 'Site Usage',
 			'entity'		=> 'base.session',
@@ -757,7 +757,7 @@ class owa_baseModule extends owa_module {
 		
 			$this->registerMetricDefinition(array(
 				'name'			=> 'uniqueVisitors',
-				'label'			=> 'Unique Visitors',
+				'label'			=> '特别访客',
 				'description'	=> 'The total number of unique visitors.',
 				'group'			=> 'Site Usage',
 				'entity'		=> $factEntity,
@@ -774,7 +774,7 @@ class owa_baseModule extends owa_module {
 			// owa_session uses a different column name and has it's own metric registration above.
 				$this->registerMetricDefinition(array(
 					'name'			=> 'visits',
-					'label'			=> 'Visits',
+					'label'			=> '访客',
 					'description'	=> 'The total number of visits/sessions.',
 					'group'			=> 'Site Usage',
 					'entity'		=> 'base.session',
@@ -786,7 +786,7 @@ class owa_baseModule extends owa_module {
 			
 				$this->registerMetricDefinition(array(
 					'name'			=> 'visits',
-					'label'			=> 'Visits',
+					'label'			=> '浏览记录',
 					'description'	=> 'The total number of visits/sessions.',
 					'group'			=> 'Site Usage',
 					'entity'		=> 'base.request',
@@ -803,7 +803,7 @@ class owa_baseModule extends owa_module {
 				'base.visitorsFromRequestFact'
 			),
 			'',
-			'Visitors',
+			'访客',
 			'The total number of visitors',
 			'Site Usage'
 		);
@@ -812,7 +812,7 @@ class owa_baseModule extends owa_module {
 			'newVisitors', 
 			'base.newVisitors',
 			'',
-			'New Visitors',
+			'新访客',
 			'The total number of new visitors',
 			'Site Usage'
 		);
@@ -821,7 +821,7 @@ class owa_baseModule extends owa_module {
 			'repeatVisitors', 
 			'base.repeatVisitors',
 			'',
-			'Repeat Visitors',
+			'重复访客',
 			'The total number of repeat visitors',
 			'Site Usage'
 		);
@@ -839,7 +839,7 @@ class owa_baseModule extends owa_module {
 			'visitDuration', 
 			'base.visitDuration',
 			'',
-			'Visit Duration',
+			'浏览时间',
 			'The average duration of visits.',
 			'Site Usage'
 		);
@@ -857,7 +857,7 @@ class owa_baseModule extends owa_module {
 			'bounceRate', 
 			'base.bounceRate',
 			'',
-			'Bounce Rate',
+			'跳出率',
 			'The percentage of visits that were bounces.',
 			'Site Usage'
 		);
@@ -866,7 +866,7 @@ class owa_baseModule extends owa_module {
 			'pagesPerVisit', 
 			'base.pagesPerVisit',
 			'',
-			'Pages Per Visit',
+			'每次浏览网页数',
 			'The average pages viewed per visit.',
 			'Site Usage'
 		);
@@ -2263,7 +2263,7 @@ class owa_baseModule extends owa_module {
 	
 	function registerNavigation() {
 		
-		$this->addNavigationSubGroup('Dashboard', 'base.reportDashboard', 'Dashboard', 1);		
+		$this->addNavigationSubGroup('Dashboard', 'base.reportDashboard', '状态板', 1);		
 		
 		//Ecommerce
 		$this->addNavigationSubGroup('Ecommerce', 'base.reportEcommerce', 'Ecommerce', 5, 'view_reports_ecommerce');
@@ -2273,43 +2273,43 @@ class owa_baseModule extends owa_module {
 		$this->addNavigationLinkInSubGroup('Ecommerce', 'base.reportDaysToPurchase', 'Days To Purchase', 5);
 		
 		//Content
-		$this->addNavigationSubGroup('Content', 'base.reportContent', 'Content', 4);
-		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportPages', 'Top Pages', 1);
-		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportPageTypes', 'Page Types', 2);
-		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportFeeds', 'Feeds', 7);
-		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportEntryPages', 'Entry Pages', 3);
-		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportExitPages', 'Exit Pages', 4);
+		$this->addNavigationSubGroup('Content', 'base.reportContent', '内容', 4);
+		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportPages', '热门页面', 1);
+		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportPageTypes', '页面类型', 2);
+		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportFeeds', '页面内容', 7);
+		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportEntryPages', '入口页面', 3);
+		$this->addNavigationLinkInSubGroup( 'Content', 'base.reportExitPages', '退出页面', 4);
 		
 		
 		//Actions
-		$this->addNavigationSubGroup('Action Tracking', 'base.reportActionTracking', 'Action Tracking', 1);
-		$this->addNavigationLinkInSubGroup('Action Tracking', 'base.reportActionGroups', 'Action Groups', 2);
+		$this->addNavigationSubGroup('Action Tracking', 'base.reportActionTracking', '动态追踪', 1);
+		$this->addNavigationLinkInSubGroup('Action Tracking', 'base.reportActionGroups', '动态群组', 2);
 		
 		//Visitors
-		$this->addNavigationSubGroup( 'Visitors', 'base.reportVisitors', 'Visitors', 3);
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportGeolocation', 'Geo-location', 1);
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportHosts', 'Domains', 2);								
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportVisitorsLoyalty', 'Visitor Loyalty', 3);
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportVisitorsRecency', 'Visitor Recency', 4);
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportVisitorsAge', 'Visitor Age', 5);
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportBrowsers', 'Browser Types', 6);
-		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportOs', 'Operating Systems', 7);
+		$this->addNavigationSubGroup( 'Visitors', 'base.reportVisitors', '访客', 3);
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportGeolocation', '地理位置', 1);
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportHosts', '域名', 2);								
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportVisitorsLoyalty', '访客忠诚度', 3);
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportVisitorsRecency', '最近访客', 4);
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportVisitorsAge', '访客年龄', 5);
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportBrowsers', '浏览器类型', 6);
+		$this->addNavigationLinkInSubGroup( 'Visitors', 'base.reportOs', '操作系统', 7);
 		
 		//Traffic
-		$this->addNavigationSubGroup('Traffic', 'base.reportTraffic', 'Traffic', 2);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportKeywords', 'Search Terms', 1);								
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAnchortext', 'Inbound Link Text', 2);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportSearchEngines', 'Search Engines', 3);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportReferringSites', 'Referring Web Sites', 4);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCampaigns', 'Campaigns', 5);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAds', 'Ad Performance', 6);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAdTypes', 'Ad Types', 7);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCreativePerformance', 'Creative Performance', 8);
-		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAttributionHistory', 'Attribution History', 8);
+		$this->addNavigationSubGroup('Traffic', 'base.reportTraffic', '流量', 2);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportKeywords', '搜索名词', 1);								
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAnchortext', '入站文本链接', 2);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportSearchEngines', '搜索引擎', 3);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportReferringSites', '相关网站', 4);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCampaigns', '广告活动', 5);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAds', '广告效果', 6);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAdTypes', '广告类型', 7);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportCreativePerformance', '创作效果', 8);
+		$this->addNavigationLinkInSubGroup( 'Traffic', 'base.reportAttributionHistory', '归因历史', 8);
 		
 		//Goals
-		$this->addNavigationSubGroup('Goals', 'base.reportGoals', 'Goals', 5);
-		$this->addNavigationLinkInSubGroup( 'Goals', 'base.reportGoalFunnel', 'Funnel Visualization', 1);	
+		$this->addNavigationSubGroup('Goals', 'base.reportGoals', '目标', 5);
+		$this->addNavigationLinkInSubGroup( 'Goals', 'base.reportGoalFunnel', '渠道可视化', 1);	
 				
 	}
 	

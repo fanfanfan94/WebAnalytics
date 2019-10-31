@@ -37,7 +37,7 @@ class owa_pagesPerVisit extends owa_calculatedMetric {
 	function __construct() {
 	
 		$this->setName('pagesPerVisit');
-		$this->setLabel('Pages Per Visit');
+		$this->setLabel('每次访问页面数');
 		$this->setChildMetric('pageViews');
 		$this->setChildMetric('visits');
 		$this->setFormula('round(pageViews / visits, 2)');

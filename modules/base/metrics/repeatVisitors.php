@@ -33,7 +33,7 @@ class owa_repeatVisitors extends owa_metric {
 	function __construct() {
 	
 		$this->setName('repeatVisitors');
-		$this->setLabel('Repeat Visitors');
+		$this->setLabel('重复访客');
 		$this->setEntity('base.session');
 		$this->setSelect("(count(distinct(session.visitor_id)) - sum(CASE session.is_new_visitor WHEN TRUE THEN 1 ELSE 0 END))");
 		$this->setDataType('integer');

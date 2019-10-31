@@ -36,7 +36,7 @@ class owa_reportVisitorsAgeController extends owa_reportController {
 	function action() {
 							
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Visitor Age');
+		$this->setTitle('访客年龄');
 		$this->set('metrics', 'visits');
 		$this->set('dimensions', 'daysSinceFirstVisit');
 		$this->set('sort', 'daysSinceFirstVisit');

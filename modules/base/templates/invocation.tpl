@@ -1,7 +1,7 @@
 <fieldset>
 	<legend>Javascript</legend>
 	<div style="padding:10px;">	
-		<P>To track page views using Javascript, cut and paste this tracking tag into the HTML of your web pages. Learn more about how to use OWA's  <a href="<?php echo $this->makeWikiLink('Javascript_Invocation');?>">Javascript tracking API</a> to track your web site and pages.</P>
+		<P>如果需要使用JavaScript来监测网站，请将下面的代码复制粘贴到你的HTML页面中。 </P>
 	
 		<textarea cols="110" rows="18">
 				
@@ -15,7 +15,7 @@
 	<legend>PHP</legend>
 	<div style="padding:10px;">
 	
-		<P>To track page views using PHP, cut and paste the following code to your PHP script/application. Learn more about how to use OWA's <a href="<?php echo $this->makeWikiLink('PHP_Invocation');?>">PHP Tracking API</a> to track your web site and pages.</P>
+		<P>如果需要使用PHP来监测网站，请将下面代码复制粘贴到你的PHP脚本、应用中。</P>
 			
 		<textarea cols="75" rows="12">
 		

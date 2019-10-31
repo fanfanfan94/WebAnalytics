@@ -35,7 +35,7 @@ class owa_reportAdsController extends owa_reportController {
 	function action() {
 		
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Ad Performance');
+		$this->setTitle('广告效果');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'ad');
 		$this->set('sort', 'visits-');

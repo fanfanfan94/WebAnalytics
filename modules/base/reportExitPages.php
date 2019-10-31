@@ -35,7 +35,7 @@ class owa_reportExitPagesController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Exit Pages');
+		$this->setTitle('退出页面');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'exitPagePath,exitPageUrl,exitPageTitle');
 		$this->set('sort', 'visits-');

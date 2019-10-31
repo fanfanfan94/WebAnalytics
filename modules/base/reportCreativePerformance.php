@@ -35,7 +35,7 @@ class owa_reportCreativePerformanceController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Creative Performance');
+		$this->setTitle('创作效果');
 		
 		$this->set('dimensions', 'ad,entryPagePath');
 		$this->set('sort', 'visits-');

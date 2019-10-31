@@ -35,7 +35,7 @@ class owa_reportBrowsersController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Browser Types');
+		$this->setTitle('浏览器类型');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'browserType');
 		$this->set('sort', 'visits-');

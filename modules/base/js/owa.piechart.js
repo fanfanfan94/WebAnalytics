@@ -155,7 +155,7 @@ OWA.pieChart.prototype = {
 				
 			} else {
 				//no results
-				jQuery('#'+ that.dom_id).append("No data is available for this time period");
+				jQuery('#'+ that.dom_id).append("当前时间段没有数据");
 				jQuery('#'+ that.dom_id).css('height', '50px');
 
 			}
@@ -172,7 +172,7 @@ OWA.pieChart.prototype = {
 				//OWA.setSetting('debug', true);
 				//OWA.debug('there was no data');
 				//alert('hi');
-				jQuery('#'+ that.dom_id).append("No data is available for this time period");
+				jQuery('#'+ that.dom_id).append("当前时间段没有数据");
 				jQuery('#'+ that.dom_id).css('height', '50px');
 				
 			}			

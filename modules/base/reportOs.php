@@ -35,7 +35,7 @@ class owa_reportOsController extends owa_reportController {
 	function action() {
 			
 		$this->setSubview('base.reportDimension');
-		$this->setTitle('Operating Systems');
+		$this->setTitle('操作系统');
 		$this->set('metrics', 'visits,pageViews,bounces');
 		$this->set('dimensions', 'osType');
 		$this->set('sort', 'visits-');
