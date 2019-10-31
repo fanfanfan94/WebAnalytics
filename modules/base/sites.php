@@ -47,7 +47,7 @@ class owa_sitesController extends owa_reportController {
 		$this->set('tracked_sites', $sites);
 		$this->setSubview('base.sites');
 		$this->setView('base.report');
-		$this->set('title', 'Sites Roster');
+		$this->set('title', '网站名册');
 		$this->hideReportingNavigation();
 		$this->hideSitesFilter();
 	}
@@ -71,7 +71,7 @@ class owa_sitesView extends owa_view {
 	function render() {
 		
 		//page title
-		$this->t->set('page_title', 'Sites Roster');
+		$this->t->set('page_title', '网站名册');
 		$this->body->set_template('sites.tpl');
 		$this->body->set('tracked_sites', $this->get('tracked_sites'));
 	}
