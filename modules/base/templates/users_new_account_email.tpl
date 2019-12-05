@@ -1,11 +1,11 @@
-<p>An Open Web Analytics account has been created for you.</p>
+<p>网站助手的账号已经创建完成</p>
 
-<p>Your User Name is: <?php $this->out( $user_id );?></p> 
+<p> 你的用户名是: <?php $this->out( $user_id );?></p> 
 
-<p>To login you need to set your password by clicking on the link below.</p>
+<p>需要设置密码请点击下面的链接。</p>
 
 <p><?php echo $this->makeAbsoluteLink(array('do' => 'base.usersPasswordEntry', 'k' => $key));?> </p>
 
-<p>Once your password has been setup you can login to OWA at the following URL:</p>
+<p>当你的密码设置完成你可以通过下面的链接访问我们的页面。</p>
 
 <p><?php echo $this->makeAbsoluteLink(array('do' => 'base.reportDashboard'));?></p> 
