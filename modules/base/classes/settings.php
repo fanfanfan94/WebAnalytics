@@ -631,7 +631,7 @@
 				'mailer-host'						=> 'smtp.aliyun.com',
 				'mailer-port'						=> '465',
 				'mailer-use-smtp'					=> true,
-				'mailer-smtpAuth'					=> true,
+				'mailer-smtpAuth'					=> false,
 				'mailer-username'					=> 'kaijian.guo@aliyun.com',
 				'mailer-password'					=> 'gkj19931020',
 				'queue_events'						=> false,
