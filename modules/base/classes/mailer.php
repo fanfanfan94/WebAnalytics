@@ -44,6 +44,8 @@ class owa_mailer extends owa_base {
 		parent::__construct();
 		
 		$this->mailer = new PHPMailer();
+
+		$this->mailer->CharSet = "GB2312"; 
 		
 		if ( owa_coreAPI::getSetting( 'base', 'mailer-from' ) ) {
 		
