@@ -626,7 +626,7 @@
 				'wiki_url'							=> 'http://wiki.openwebanalytics.com',
 				'password_length'					=> 4,
 				'modules'							=> array('base'),
-				'mailer-from'						=> 'analytics@kuajingplus.com',
+				'mailer-from'						=> '',
 				'mailer-fromName'					=> 'OWA Mailer',
 				'mailer-host'						=> 'smtp.aliyun.com',
 				'mailer-port'						=> '465',
